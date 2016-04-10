@@ -1,0 +1,262 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Todays Specials</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+	<link href='https://fonts.googleapis.com/css?family=Fredericka+the+Great' rel='stylesheet' type='text/css'>
+	<style>
+	/* 
+		remove comments for debug!!
+
+	*/
+		@import url(https://fonts.googleapis.com/css?family=Fredericka+the+Great);
+		body{
+			background-image: url(http://subtlepatterns.com/patterns/pool_table.png) 
+		}
+		.main{
+			height: 1700px;
+			
+
+			/*background-color: blue;*/
+
+		}
+		.header{
+			height: 340px;
+			
+			
+			/*background-color: red;*/
+		}
+		.header h1{
+			color: white;
+			text-align: center;
+			font-family: 'Fredericka the Great', cursive;
+			font-size: 150px;
+			border-bottom: 10px solid white;
+		}
+		.special1{
+			height: 340px;
+			
+
+			/*background-color: orange;*/
+		}
+		.special2{
+			height: 340px;
+			
+
+
+			/*background-color: pink;*/
+		}
+		p{
+			color: orange;
+			text-align: center;
+			font-size: 100px;
+			font-family: 'Fredericka the Great', cursive;
+			padding: 5px;
+			margin: 5px;
+			border-bottom: 3px solid grey;
+
+		}
+		.special3{
+			height: 340px;
+			border-bottom: 0px solid white;
+			
+
+			/*background-color: green;*/
+		}
+		.special3 p{
+			
+			border-bottom: 0px solid white;
+			
+
+			/*background-color: green;*/
+		}
+		.footer p{
+			font-size:70px;
+			color: white;
+			height: 340px;
+			font-family: 'Fredericka the Great', cursive;
+			text-align: center; 
+			border-top: 10px solid white;
+			border-bottom: 0px solid white;
+
+			/*background-color: red;*/
+		}
+	</style>
+
+</head>
+<body>
+	<div class="main">
+		<div class="header">
+			<h1>
+				Today Specials
+			</h1>
+		</div>
+		<div class="special1">
+			<p>
+				Beef Shrimp Chicken With vegetables $6.25
+			</p>	
+		</div>
+		<div class="special2">
+			<p>	
+				Imperial Chicken or Beef $6.25
+			</p>
+		</div>
+		<div class="special3">
+			<p>
+				Lemor or orange Chicken $6.25
+			</p>	
+		</div>
+		<div class="footer">
+			<p>Served with fried rice, egg roll and a choice of soup: egg drop, wonton or hot and sour.</p>
+		</div>
+	</div>
+	<script>
+		$(document).ready(function(){
+			var now = new Date();
+			//var d = new Date();//get date
+			var dateTostring = now.toString();//convert date object to string
+			var dia = dateTostring.slice(0, 3);//get three char day
+			var shift = "Lunch"; // shift by the fault 
+			//alert(now)
+			if (now.getHours() > 15){// change shift to dinner after 4:00 pm 
+
+			    shift = "Dinner"
+
+			}
+
+			//console.log(dateTostring)
+			//console.log(dia)
+			//console.log(now)
+
+			//var pictureToshow = "images/" + dia + shift + ".jpg";// picture to show depend on the day and time
+			var specialtoshow1 = "Phonex and Dragon $6.75"
+			var specialtoshow2 = "Chicken With Cashews $6.75"
+			var specialtoshow3 = "House Pork $6.75"
+
+			//document.getElementsByTagName("img")[0].setAttribute("src", pictureToshow);
+			switch (dia) {
+				    case "Mon":
+						specialtoshow1 = "Phoenix and Dragon $6.75"
+						specialtoshow2 = "Chicken With Cashews $6.75"
+						specialtoshow3 = "House Pork $6.75"
+						if (shift == "Dinner"){
+							specialtoshow1 = "Chicken Hot Pepper Sauce $10.75"
+							specialtoshow2 = "Masaman Curry Beef $13.99"
+							specialtoshow3 = "Imperial Shrimp $10.75"
+
+						}
+				        break;
+				    case "Tue":
+						specialtoshow1 = "Beef, Shrimp, Chicken W/ Vegetables $6.75"
+						specialtoshow2 = "Lemon or Orange Chicken $6.75"
+						specialtoshow3 = "Imperial Beef or Chicken $6.75"
+						if (shift == "Dinner"){
+							specialtoshow1 = "Evil Jungle Chicken 10.75"
+							specialtoshow2 = "Imperial Shrimp $12.95"
+							specialtoshow3 = "House Beef $10.95"
+							
+						}
+				        break;
+				    case "Wed":
+						specialtoshow1 = "Sweet and Sour Delight $6.75"
+						specialtoshow2 = "Mongolian Chicken $6.75"
+						specialtoshow3 = "House Shrimp $6.75"
+						if (shift == "Dinner"){
+							specialtoshow1 = "Scallops and Shrimp Szechuan $16.75"
+							specialtoshow2 = "Thai Stir Fried Chicken $10.75"
+							specialtoshow3 = "Hot Plate Chicken $10.75"
+							
+						}
+				        break;
+				    case "Thu":
+						specialtoshow1 = "Imperial Beef or Chicken $6.75"
+						specialtoshow2 = "Pork Szechuan $6.75"
+						specialtoshow3 = "Beef Snow Peas $6.75"
+						if (shift == "Dinner"){
+							specialtoshow1 = "Happy Family $15.95"
+							specialtoshow2 = "Kan Shaw Beef $10.95"
+							specialtoshow3 = "Basil Chicken $12.95"
+							
+						}
+				        break;
+				    case "Fri":
+						specialtoshow1 = "Shechuan Delight $6.75"
+						specialtoshow2 = "Chicken in Garlic sauce $6.75"
+						specialtoshow3 = "Pork W/ Mushrooms $6.75"
+						if (shift == "Dinner"){
+							specialtoshow1 = "Hawaii 5-O $18.95"
+							specialtoshow2 = "Shrimp Szechuan $12.95"
+							specialtoshow3 = "Basil Shrimp $12.95"
+							
+						}
+				        break;
+				    case "Sat":
+						specialtoshow1 = "Twice Cooked Pork $6.75"
+						specialtoshow2 = "Happy Family $6.75"
+						specialtoshow3 = "Mongolian Chicken $6.75"
+						if (shift == "Dinner"){
+							specialtoshow1 = "Triple Seafood In Bird Nest $17.95"
+							specialtoshow2 = "Chicken Szechuan $10.75"
+							specialtoshow3 = "Evil Jungle Shrimp $12.95"
+							
+						}
+				        break;
+				    case "Sun":
+						specialtoshow1 = "House Chicken $6.75"
+						specialtoshow2 = "Shrimp in Garlic sauce $6.75"
+						specialtoshow3 = "Sweet and Sour Delight $6.75"
+						if (shift == "Dinner"){
+							specialtoshow1 = "Szechuan Delight $13.05"
+							specialtoshow2 = "Mongolian Chicken $10.05"
+							specialtoshow3 = "Red Curry Chicken $10.75"
+							
+						}
+				        break;
+				}
+			function hola(){
+
+			$(".special1 p").text(specialtoshow1)
+			$(".special2 p").text(specialtoshow2)
+			$(".special3 p").text(specialtoshow3)
+			}
+			hola()
+			//alert(pictureToshow)
+			//alert(dateTostring)
+
+			function refreshAt(hours, minutes, seconds) {
+			    //var now = new Date();
+			    var then = new Date();
+
+			    if(now.getHours() > hours ||
+			       (now.getHours() == hours && now.getMinutes() > minutes) ||
+			        now.getHours() == hours && now.getMinutes() == minutes && now.getSeconds() >= seconds) {
+			        then.setDate(now.getDate() + 1);
+			    }
+			    then.setHours(hours);
+			    then.setMinutes(minutes);
+			    then.setSeconds(seconds);
+
+			    var timeout = (then.getTime() - now.getTime());
+			    setTimeout(function() { window.location.reload(true); }, timeout);
+			}
+
+			refreshAt(16, 00, 0);
+			});
+
+
+	</script>
+	<script type="text/javascript">
+  WebFontConfig = {
+    google: { families: [ 'Fredericka+the+Great::latin' ] }
+  };
+  (function() {
+    var wf = document.createElement('script');
+    wf.src = 'https://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+    wf.type = 'text/javascript';
+    wf.async = 'true';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(wf, s);
+  })(); </script>
+</body>
+</html>
